@@ -1,0 +1,38 @@
+{
+  "_id": {
+    "$oid": ""
+  },
+  "username": "",
+  "password": "",
+  "fingerprint": [
+
+  ],
+  "ip": "127.0.0.1",
+  "settings": {
+    "bin": "",
+    "proxy": "",
+    "logs": [
+      "yellow: yellow: TRYING CARD: 4750556102909756|06|27",
+    
+    "red: red: CARD DECLINED generic_decline",
+    
+    "yellow:yellow: TRYING CARD: 4750556102906455|02|27",
+    
+    "red: red: CARD DECLINED incorrect_number",
+    
+    "yellow:yellow: TRYING CARD: 4750556102908139|01|24",
+    
+    "red: red: CARD DECLINED incorrect_number",
+    
+    "yellow: yellow: TRYING CARD: 4750556102901001|04|29",
+    
+    "yellow:yellow: TRYING CARD: 4680056234367770|01|24",
+    
+    "yellow:yellow: TRYING CARD: 4680056444070925|04|30",
+    
+    "red:red: CARD DECLINED payment_intent_authentication_failure"
+    ]
+  },
+  "role": "stable",
+  "invites": {}
+}
