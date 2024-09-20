@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The-GodBypasserV4 Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 0 10px;
+            transition: background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .button .icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.3s ease;
+        }
+
+        .button:hover .icon {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        #ip-address {
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The-GodBypasserV4 Dashboard</h1>
+        <p>The-GodBypasserV4!</p>
+        <button class="button" id="login-btn">
+            Login <i class="icon fas fa-sign-in-alt"></i>
+        </button>
+        <button class="button" id="register-btn">
+            Register <i class="icon fas fa-user-plus"></i>
+        </button>
+        <p id="ip-address">Your IP Address: <span id="ip"></span></p>
+    </div>
+
+    <script>
+        // Function to fetch and display user's IP address
+        async function fetchIPAddress() {
+            try {
+                const response = await fetch('https://api64.ipify.org?format=json');
+                const data = await response.json();
+                document.getElementById('ip').textContent = data.ip;
+            } catch (error) {
+                console.error('Failed to fetch IP address:', error);
+                document.getElementById('ip-address').style.display = 'none'; // Hide IP address section on error
+            }
+        }
+
+        // Event listeners for buttons
+        document.getElementById("login-btn").addEventListener("click", function() {
+            window.location.href = "/login";
+        });
+
+        document.getElementById("register-btn").addEventListener("click", function() {
+            window.location.href = "/register";
+        });
+
+        // Fetch IP address when the page loads
+        window.addEventListener('load', fetchIPAddress);
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The-GodBypasserV4</title>
+    <style>
+        /* Global styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max");
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 0 10px;
+            transition: background-color 0.3s ease;
+            outline: none;
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+
+        .button:focus {
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Keyframes for animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .button {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The-GodBypasserV4</h1>
+        <p>The-GodBypasserV4</p>
+        <p>Your IP Address: <span id="ip-address">Loading...</span></p>
+        <button class="button" id="login-btn">Login</button>
+        <button class="button" id="register-btn">Register</button>
+    </div>
+
+    <script>
+        // Fetch IP Address using a free service (can be unreliable)
+        fetch('https://api64.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ip-address').textContent = data.ip;
+            })
+            .catch(error => {
+                console.error('Error fetching IP address:', error);
+                document.getElementById('ip-address').textContent = 'Error fetching IP';
+            });
+
+        // JavaScript to handle button clicks
+        document.getElementById("login-btn").addEventListener("click", function() {
+            animateButton("login-btn");
+            setTimeout(function() {
+                window.location.href = "/login";
+            }, 300); // Delay for 0.3s to see the animation
+        });
+        
+        document.getElementById("register-btn").addEventListener("click", function() {
+            animateButton("register-btn");
+            setTimeout(function() {
+                window.location.href = "/register";
+            }, 300); // Delay for 0.3s to see the animation
+        });
+
+        function animateButton(id) {
+            var button = document.getElementById(id);
+            button.classList.add('animate__animated', 'animate__bounceOut');
+            setTimeout(function() {
+                button.classList.remove('animate__animated', 'animate__bounceOut');
+            }, 500); // Adjust the time as per your animation duration
+        }
+    </script>
+
+    <!-- Link to Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</body>
+</html>
